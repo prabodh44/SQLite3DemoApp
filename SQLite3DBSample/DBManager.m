@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *arrayResults;
 
 - (void) copyDatabaseIntoDocumentsDirectory;
--(BOOL) runQuery : (NSString *)query isQueryExecutable:(BOOL) queryExecutable;
+-(void) runQuery : (NSString *)query isQueryExecutable:(BOOL) queryExecutable;
 
 @end
 
@@ -59,7 +59,7 @@
     }
 }
 
-- (BOOL)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable{
+- (void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable{
     //1. set the database path
     sqlite3 *sqlite3Database;
     
@@ -113,10 +113,26 @@
                 }
             }else{
                 //for insert, delete and update
+                BOOL executeQueryResult = sqlite3_step(compiledStatement);
+                if(executeQueryResult == SQLITE_OK){
+                    //keep the affected rows
+                    _affectedRows = sqlite3_changes(sqlite3Database);
+                    
+                    //keep the last inserted row id
+                    _lastInsertedRowId = sqlite3_last_insert_rowid(sqlite3Database);
+                    
+                }else{
+                    NSLog(@"%s", sqlite3_errmsg(sqlite3Database));
+                }
             }
+        }else{
+            //data base cannot open
+            NSLog(@"%s", sqlite3_errmsg(sqlite3Database));
         }
+        sqlite3_finalize(compiledStatement);
+
     }
-    
+    sqlite3_close(sqlite3Database);
     
 }
 

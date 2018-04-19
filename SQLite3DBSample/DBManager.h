@@ -15,5 +15,5 @@
 @property (nonatomic) int affectedRows;
 @property (nonatomic) long long lastInsertedRowId;
 
-- (id) initWithDatabaseFileName:(const char *) dbFileName;
+- (id) initWithDatabaseFileName:(NSString *) dbFileName;
 @end
