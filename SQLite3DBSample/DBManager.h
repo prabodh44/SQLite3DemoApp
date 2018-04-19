@@ -10,10 +10,5 @@
 #import <sqlite3.h>
 
 @interface DBManager : NSObject
-
-@property (nonatomic, strong) NSString *documentsDirectory;
-@property (nonatomic, strong) NSString *databaseFilename;
-
 - (id) initWithDatabaseFileName:(NSString *) dbFileName;
-- (void) copyDatabaseIntoDocumentsDirectory;
 @end

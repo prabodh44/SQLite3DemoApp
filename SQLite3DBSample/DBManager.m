@@ -8,6 +8,20 @@
 
 #import "DBManager.h"
 
+
+@interface DBManager()
+
+@property (nonatomic, strong) NSString *documentsDirectory;
+@property (nonatomic, strong) NSString *databaseFilename;
+@property (nonatomic, strong) NSMutableArray *arrayResults;
+
+- (void) copyDatabaseIntoDocumentsDirectory;
+-(BOOL) runQuery : (NSString *)query isQueryExecutable:(BOOL) queryExecutable;
+
+@end
+
+
+
 @implementation DBManager
 
 -(id) initWithDatabaseFileName:(NSString *)dbFileName{
