@@ -10,5 +10,10 @@
 #import <sqlite3.h>
 
 @interface DBManager : NSObject
-- (id) initWithDatabaseFileName:(NSString *) dbFileName;
+
+@property (nonatomic, strong) NSMutableArray *arrColumnNames;
+@property (nonatomic) int affectedRows;
+@property (nonatomic) long long lastInsertedRowId;
+
+- (id) initWithDatabaseFileName:(const char *) dbFileName;
 @end
