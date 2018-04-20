@@ -15,6 +15,8 @@
 		76D5EF69208861FB0042E45B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EF68208861FB0042E45B /* main.m */; };
 		76D5EF712088623A0042E45B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D5EF702088623A0042E45B /* libsqlite3.tbd */; };
 		76D5EF74208862B70042E45B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EF73208862B70042E45B /* DBManager.m */; };
+		76D5EF762088B0A20042E45B /* peopleInfo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 76D5EF752088B0A20042E45B /* peopleInfo.sqlite */; };
+		76D5EF792088B7150042E45B /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EF782088B7150042E45B /* EditInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		76D5EF702088623A0042E45B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		76D5EF72208862B70042E45B /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		76D5EF73208862B70042E45B /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		76D5EF752088B0A20042E45B /* peopleInfo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = peopleInfo.sqlite; sourceTree = "<group>"; };
+		76D5EF772088B7150042E45B /* EditInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditInfoViewController.h; sourceTree = "<group>"; };
+		76D5EF782088B7150042E45B /* EditInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +70,14 @@
 		76D5EF58208861D40042E45B /* SQLite3DBSample */ = {
 			isa = PBXGroup;
 			children = (
+				76D5EF752088B0A20042E45B /* peopleInfo.sqlite */,
 				76D5EF59208861D40042E45B /* AppDelegate.h */,
 				76D5EF5A208861D40042E45B /* AppDelegate.m */,
 				76D5EF5C208861D40042E45B /* ViewController.h */,
 				76D5EF5D208861D40042E45B /* ViewController.m */,
 				76D5EF5F208861D40042E45B /* Main.storyboard */,
+				76D5EF772088B7150042E45B /* EditInfoViewController.h */,
+				76D5EF782088B7150042E45B /* EditInfoViewController.m */,
 				76D5EF62208861FB0042E45B /* Assets.xcassets */,
 				76D5EF64208861FB0042E45B /* LaunchScreen.storyboard */,
 				76D5EF67208861FB0042E45B /* Info.plist */,
@@ -147,6 +155,7 @@
 			files = (
 				76D5EF66208861FB0042E45B /* LaunchScreen.storyboard in Resources */,
 				76D5EF63208861FB0042E45B /* Assets.xcassets in Resources */,
+				76D5EF762088B0A20042E45B /* peopleInfo.sqlite in Resources */,
 				76D5EF61208861D40042E45B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D5EF792088B7150042E45B /* EditInfoViewController.m in Sources */,
 				76D5EF5E208861D40042E45B /* ViewController.m in Sources */,
 				76D5EF69208861FB0042E45B /* main.m in Sources */,
 				76D5EF5B208861D40042E45B /* AppDelegate.m in Sources */,

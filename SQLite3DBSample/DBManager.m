@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *arrayResults;
 
 - (void) copyDatabaseIntoDocumentsDirectory;
--(void) runQuery : (NSString *)query isQueryExecutable:(BOOL) queryExecutable;
+-(void) runQuery : (char const *)query isQueryExecutable:(BOOL) queryExecutable;
 
 @end
 
@@ -108,7 +108,9 @@
                             [_arrColumnNames addObject:columnName];
                         }
                         
-                        
+                        if([arrayDataRow count] > 0){
+                            [_arrayResults addObject:arrayDataRow];
+                        }
                     }
                 }
             }else{
@@ -134,6 +136,15 @@
     }
     sqlite3_close(sqlite3Database);
     
+}
+
+- (NSArray *)loadData:(NSString *)query{
+    [self runQuery:[query UTF8String] isQueryExecutable:NO];
+    return (NSArray *) _arrayResults;
+}
+
+- (void)executeQuery:(NSString *)query{
+    [self runQuery:[query UTF8String] isQueryExecutable:YES];
 }
 
 @end

@@ -16,4 +16,7 @@
 @property (nonatomic) long long lastInsertedRowId;
 
 - (id) initWithDatabaseFileName:(NSString *) dbFileName;
+
+- (NSArray *) loadData:(NSString *) query;
+- (void) executeQuery:(NSString *) query;
 @end
